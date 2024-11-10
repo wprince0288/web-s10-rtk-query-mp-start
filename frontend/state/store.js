@@ -8,6 +8,6 @@ export const store = configureStore({
     [quotesApi.reducerPath]: quotesApi.reducer,
   },
   middleware: getDefault => getDefault().concat(
-    quotesApi.middleware, 
+    quotesApi.middleware,
   ),
 })

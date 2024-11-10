@@ -26,7 +26,11 @@ export const quotesApi = createApi({
             invalidatesTags: ['Quotes'],
         }),
         deleteQuote: builder.mutation({
-
+            query: id => ({
+                url: `quotes/${id}`,
+                method: 'DELETE',
+            }),
+            invalidatesTags: ['Quotes'],
         })
     })
 })
