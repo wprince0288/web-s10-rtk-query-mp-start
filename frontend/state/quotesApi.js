@@ -17,8 +17,13 @@ export const quotesApi = createApi({
             }),
             invalidatesTags: ['Quotes'],
         }),
-        toggleQuote: builder.mutation({
-
+        toggleFake: builder.mutation({
+            query: ({ id, quote }) => ({
+                url: `quotes/${id}`,
+                method: 'PUT',
+                body: quote,
+            }),
+            invalidatesTags: ['Quotes'],
         }),
         deleteQuote: builder.mutation({
 
